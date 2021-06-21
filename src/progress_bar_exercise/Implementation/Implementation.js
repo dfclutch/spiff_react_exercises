@@ -4,7 +4,7 @@ import Button from './ButtonPair/ButtonPair';
 
 function Solution() {
   return (
-    <>
+    <div>
       <ProgressBar />
       <Button
         buttons={[
@@ -12,7 +12,7 @@ function Solution() {
           { color: 'red', text: 'Finish Request' },
         ]}
       />
-    </>
+    </div>
   );
 }
 
