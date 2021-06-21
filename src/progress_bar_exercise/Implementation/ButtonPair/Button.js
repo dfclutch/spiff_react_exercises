@@ -8,7 +8,7 @@ function Button({ color, text, handler }) {
   }
 
   return (
-    <div className={`button ${color}`} onClick={handleClick}>
+    <div className={`button small medium ${color}`} onClick={handleClick}>
       { text }
     </div>
   );
