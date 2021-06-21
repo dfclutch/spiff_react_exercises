@@ -1,6 +1,5 @@
 export const REQUEST_STATES = {
   PRE: 'PRE',
   LOADING: 'loading',
-  FINISHED: 'finished',
-  POST: 'POST'
+  FINISHED: 'finished'
 }

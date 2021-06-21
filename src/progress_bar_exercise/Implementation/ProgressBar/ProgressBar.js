@@ -15,10 +15,7 @@ const BAR_STYLES = {
   [REQUEST_STATES.FINISHED]: {
     'transitionDuration': '1s',
     'width': '100%'
-  },
-  [REQUEST_STATES.POST]: {
-    'width': '0%'
-  },
+  }
 };
 
 function ProgressBar({

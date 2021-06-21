@@ -41,7 +41,7 @@ function Solution({
         finishRequest={() => {
           setRequestState(REQUEST_STATES.FINISHED);
           setTimeout(() => {
-            setRequestState(REQUEST_STATES.POST);
+            setRequestState(REQUEST_STATES.PRE);
           }, 4000);
         }}
       />
