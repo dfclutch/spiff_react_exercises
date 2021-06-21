@@ -1,13 +1,15 @@
 @import "../../../shared_styles/colors.scss";
 
 .container {
-  background-color: $gray-lighter;
   height: 10px;
   display: flex;
   align-items: center;
   padding: 0 2px;
-  border-radius: 5px;
   margin-bottom: 12px;
+
+  border-radius: 5px;
+
+  background-color: $gray-lighter;
 
   .bar {
     display: block;
@@ -20,5 +22,15 @@
     );
     position: relative;
     overflow: hidden;
+    width: 0%;
+    transition-property: width;
+    transition-timing-function: linear;
+    
+    &.startRequest {
+      width: 90%;
+    }
+    &.finishRequest {
+      width: 100%;
+    }
   }  
 }
