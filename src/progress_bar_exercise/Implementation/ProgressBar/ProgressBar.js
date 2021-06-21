@@ -18,12 +18,8 @@ const BAR_STYLES = {
   }
 };
 
-function ProgressBar({
-  percent,
-  requestState,
-  usePercent
-}) {
-  const style = !usePercent
+function getBarStyle({requestState, usePercent, percent}) {
+  return !usePercent
     ? BAR_STYLES[requestState]
     : requestState === REQUEST_STATES.LOADING
       ? {
@@ -31,12 +27,18 @@ function ProgressBar({
         width: `${percent}%`
       }
       : BAR_STYLES[requestState]
-  
+}
+
+function ProgressBar({
+  percent,
+  requestState,
+  usePercent
+}) {
   return (
     <div className='container'>
       <span
         className={`bar`}
-        style={style}
+        style={getBarStyle({requestState, usePercent, percent})}
       />
     </div>
   );
