@@ -1,0 +1,24 @@
+@import "../../../shared_styles/colors.scss";
+
+.button {
+  height: 32px;
+  margin: 0 8px;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  
+  border: 1px solid;
+  border-radius: 16px;
+  cursor: pointer;
+  
+  &:hover {
+    border-width: 2px;
+    margin: 0 7px;
+  }
+
+  &:active {
+    border-width: 3px;
+    margin: 0 6px;
+  }
+}

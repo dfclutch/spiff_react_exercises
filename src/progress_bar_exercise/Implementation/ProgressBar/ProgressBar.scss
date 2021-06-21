@@ -1,0 +1,29 @@
+@import "../../../shared_styles/colors.scss";
+
+.container {
+  height: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+  margin-bottom: 12px;
+
+  border-radius: 5px;
+
+  background-color: $gray-lighter;
+
+  .bar {
+    display: block;
+    height: 6px;
+    border-radius: 3px;
+    background-image: linear-gradient(
+      to right,
+      $coral,
+      $red
+    );
+    position: relative;
+    overflow: hidden;
+    width: 0%;
+    transition-property: width;
+    transition-timing-function: linear;
+  }
+}
