@@ -25,12 +25,5 @@
     width: 0%;
     transition-property: width;
     transition-timing-function: linear;
-    
-    &.startRequest {
-      width: 90%;
-    }
-    &.finishRequest {
-      width: 100%;
-    }
-  }  
+  }
 }
