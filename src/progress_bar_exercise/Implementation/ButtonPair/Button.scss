@@ -2,7 +2,7 @@
 
 .button {
   height: 32px;
-  margin: 0 8px;
+  margin: 8px;
   padding: 0 16px;
 
   display: flex;
@@ -11,14 +11,21 @@
   border: 1px solid;
   border-radius: 16px;
   cursor: pointer;
+
+  max-width: 135px;
   
   &:hover {
     border-width: 2px;
-    margin: 0 7px;
+    margin: 7px;
   }
 
   &:active {
     border-width: 3px;
-    margin: 0 6px;
+    margin: 6px;
+  }
+
+  &.solid {
+    color: white;
+    background-color: black;
   }
 }

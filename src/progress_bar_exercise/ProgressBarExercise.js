@@ -19,5 +19,5 @@ export default ProgressBarExercise;
 // ----------------------------------------------------------------------------------
 
 const Solution = () => {
-  return <Implementation />;
+  return <Implementation breakpoints={[25, 50, 75]}/>;
 };
