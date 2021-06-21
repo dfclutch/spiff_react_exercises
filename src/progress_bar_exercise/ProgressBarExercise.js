@@ -19,5 +19,5 @@ export default ProgressBarExercise;
 // ----------------------------------------------------------------------------------
 
 const Solution = () => {
-  return <Implementation breakpoints={[25, 50, 75]}/>;
+  return <Implementation breakpoints={[25, 50, 75]} delayTime={2000}/>;
 };

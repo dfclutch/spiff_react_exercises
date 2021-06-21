@@ -21,12 +21,25 @@ const BAR_STYLES = {
   },
 };
 
-function ProgressBar({ requestState }) {
+function ProgressBar({
+  percent,
+  requestState,
+  usePercent
+}) {
+  const style = !usePercent
+    ? BAR_STYLES[requestState]
+    : requestState === REQUEST_STATES.LOADING
+      ? {
+        'transitionDuration': '3s',
+        width: `${percent}%`
+      }
+      : BAR_STYLES[requestState]
+  
   return (
     <div className='container'>
       <span
         className={`bar`}
-        style={BAR_STYLES[requestState]}
+        style={style}
       />
     </div>
   );

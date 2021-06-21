@@ -4,21 +4,40 @@ import ButtonPair from './ButtonPair/ButtonPair';
 import { REQUEST_STATES } from './constants';
 import Button from './ButtonPair/Button';
 
+function startRequestWithBreakpoints(breakpoints, setPercent, delayTime) {
+  let bpIndex = 0;
+  const breakpointsInterval = setInterval(() => {
+    setPercent(breakpoints[bpIndex]);
+    bpIndex++;
+    if (bpIndex === breakpoints.length) {
+      clearInterval(breakpointsInterval);
+    }
+  }, delayTime);
+}
+
 function Solution({
-  breakpoints
+  breakpoints,
+  delayTime=2000
 }) {
   const [ requestState, setRequestState ] = useState(REQUEST_STATES.PRE);
-  const [ useBreakpoints, setUseBreakpoint ] = useState(false);
+  const [ useBreakpoints, setUseBreakpoints ] = useState(false);
+  const [ percent, setPercent ] = useState(0);
 
   return (
     <div>
       <ProgressBar
+        percent={percent}
         requestState={requestState}
-        breakpoints={breakpoints}
+        usePercent={useBreakpoints}
       />
       <ButtonPair
         requestState={requestState}
-        startRequest={() => setRequestState(REQUEST_STATES.LOADING)}
+        startRequest={() => {
+          if (useBreakpoints) {
+            startRequestWithBreakpoints(breakpoints, setPercent, delayTime);
+          }
+          setRequestState(REQUEST_STATES.LOADING)
+        }}
         finishRequest={() => {
           setRequestState(REQUEST_STATES.FINISHED);
           setTimeout(() => {
@@ -30,8 +49,8 @@ function Solution({
         text='Use Breakpoints?'
         handler={() => {
           useBreakpoints
-            ? setUseBreakpoint(false)
-            : setUseBreakpoint(true);
+            ? setUseBreakpoints(false)
+            : setUseBreakpoints(true);
         }}
         selected={useBreakpoints}
       />
