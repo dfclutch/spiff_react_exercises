@@ -33,6 +33,8 @@ function Solution({
       <ButtonPair
         requestState={requestState}
         startRequest={() => {
+          if (requestState !== REQUEST_STATES.PRE) return;
+
           if (useBreakpoints) {
             startRequestWithBreakpoints(breakpoints, setPercent, delayTime);
           }
