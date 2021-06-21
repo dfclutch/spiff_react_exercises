@@ -5,9 +5,6 @@ import { REQUEST_STATES } from './constants';
 
 function Solution() {
   const [ barState, setBarState ] = useState(REQUEST_STATES.PRE);
-  useEffect(() => {
-
-  })
 
   return (
     <div>
@@ -18,7 +15,7 @@ function Solution() {
           setBarState(REQUEST_STATES.FINISHED);
           setTimeout(() => {
             setBarState(REQUEST_STATES.POST);
-          }, 3000);
+          }, 4000);
         }}
       />
     </div>
