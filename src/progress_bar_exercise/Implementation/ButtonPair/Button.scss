@@ -1,0 +1,10 @@
+@import "../../../shared_styles/colors.scss";
+
+.button {
+  margin: 8px;
+  padding: 4px 10px;
+  border: 1px solid;
+  line-height: 16px;
+  border-radius: 16px;
+  cursor: pointer;
+}

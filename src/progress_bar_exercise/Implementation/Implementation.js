@@ -7,10 +7,8 @@ function Solution() {
     <div>
       <ProgressBar />
       <Button
-        buttons={[
-          { color: 'green', text: 'Start Request' },
-          { color: 'red', text: 'Finish Request' },
-        ]}
+        startRequest={() => console.log('start')}
+        finishRequest={() => console.log('finish')}
       />
     </div>
   );
