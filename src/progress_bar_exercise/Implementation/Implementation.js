@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ProgressBar from './ProgressBar/ProgressBar';
 import ButtonPair from './ButtonPair/ButtonPair';
 import { REQUEST_STATES } from './constants';
