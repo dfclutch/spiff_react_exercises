@@ -21,12 +21,12 @@ const BAR_STYLES = {
   },
 };
 
-function ProgressBar({ barState }) {
+function ProgressBar({ requestState }) {
   return (
     <div className='container'>
       <span
         className={`bar`}
-        style={BAR_STYLES[barState]}
+        style={BAR_STYLES[requestState]}
       />
     </div>
   );

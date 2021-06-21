@@ -4,17 +4,18 @@ import ButtonPair from './ButtonPair/ButtonPair';
 import { REQUEST_STATES } from './constants';
 
 function Solution() {
-  const [ barState, setBarState ] = useState(REQUEST_STATES.PRE);
+  const [ requestState, setRequestState ] = useState(REQUEST_STATES.PRE);
 
   return (
     <div>
-      <ProgressBar barState={barState}/>
+      <ProgressBar requestState={requestState}/>
       <ButtonPair
-        startRequest={() => setBarState(REQUEST_STATES.LOADING)}
+        requestState={requestState}
+        startRequest={() => setRequestState(REQUEST_STATES.LOADING)}
         finishRequest={() => {
-          setBarState(REQUEST_STATES.FINISHED);
+          setRequestState(REQUEST_STATES.FINISHED);
           setTimeout(() => {
-            setBarState(REQUEST_STATES.POST);
+            setRequestState(REQUEST_STATES.POST);
           }, 4000);
         }}
       />
